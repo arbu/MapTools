@@ -45,8 +45,8 @@ public class MapToolsPlugin extends JavaPlugin {
     @Override
     public void onDisable() {
         // write an empty json file
-    	Collection<Player> players = new LinkedList<Player>();
-        new MarkerUpdateTask(this).writePlayers(players);
+        Collection<Player> players = new LinkedList<Player>();
+        new MarkerUpdateTask(this).writePlayers(players, false);
 
         log.info("Plugin disabled!");
     }

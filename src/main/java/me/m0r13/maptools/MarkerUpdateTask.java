@@ -42,10 +42,10 @@ public class MarkerUpdateTask extends BukkitRunnable {
     }
 
     public void run() {
-        writePlayers(plugin.getServer().getOnlinePlayers());
+        writePlayers(plugin.getServer().getOnlinePlayers(), true);
     }
 
-    public void writePlayers(Collection<? extends Player> collection) {
+    public void writePlayers(Collection<? extends Player> collection, boolean asyncWrite) {
         JSONArray playersJson = new JSONArray();
         for (Player player : collection) {
             JSONObject json = new JSONObject();
@@ -77,20 +77,27 @@ public class MarkerUpdateTask extends BukkitRunnable {
         }
         final JSONObject json = new JSONObject();
         json.put("players", playersJson);
-        
-        BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-        scheduler.runTaskAsynchronously(plugin, new Runnable() {
-        	@Override
-        	public void run() {
-        		try {
-                    File file = new File(plugin.getConfig().getString("markerFile"));
-                    BufferedWriter output = new BufferedWriter(new FileWriter(file));
-                    output.write(json.toJSONString());
-                    output.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+
+        if(asyncWrite) {
+            Bukkit.getServer().getScheduler().runTaskAsynchronously(plugin, new Runnable() {
+                @Override
+                public void run() {
+                    writeToFile(json);
                 }
-        	}
-        });
+            });
+        } else {
+            writeToFile(json);
+        }
+    }
+
+    private void writeToFile(JSONObject json) {
+        try {
+            File file = new File(plugin.getConfig().getString("markerFile"));
+            BufferedWriter output = new BufferedWriter(new FileWriter(file));
+            output.write(json.toJSONString());
+            output.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
