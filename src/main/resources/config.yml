@@ -1,2 +1,3 @@
 markerFile: markers.json
 interval: 5
+offlineResolveTextures: true
