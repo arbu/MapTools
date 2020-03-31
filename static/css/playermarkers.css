@@ -1,0 +1,88 @@
+.leaflet-div-icon {
+    background: none;
+    border: 0px;
+}
+.skin span {
+    float: left;
+    display: inline-block;
+}
+.skin-air-head-l {
+    width: 4px;
+    height: 8px;
+}
+.skin-air-head-r {
+    width: 4px;
+    height: 8px;
+}
+.skin-air-legs-l {
+    width: 4px;
+    height: 12px;
+}
+.skin-air-legs-r {
+    width: 4px;
+    height: 12px;
+}
+.skin-head {
+    width: 8px;
+    height: 8px;
+    background-position: -8px -8px;
+}
+.skin-body {
+    width: 8px;
+    height: 12px;
+    background-position: -20px -20px;
+}
+.skin-arm-l {
+    width: 4px;
+    height: 12px;
+    background-position: -44px -20px;
+}
+.skin-arm-r {
+    width: 4px;
+    height: 12px;
+    background-position: -44px -20px;
+}
+.skin-leg-l {
+    width: 4px;
+    height: 12px;
+    background-position: -4px -20px;
+}
+.skin-leg-r {
+    width: 4px;
+    height: 12px;
+    background-position: -4px -20px;
+}
+
+.player-status {
+    height: 50px;
+}
+
+.player-status-name {
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+    margin: 5px;
+}
+
+.player-status-level {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: monospace;
+    float: right;
+    margin: 5px;
+    color: green;
+}
+
+.player-status-health-background {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAXElEQVQ4y+3UsQ0AIAgEwMdp2H8attHKQkSleDq/kxhyUVSwp7u1POoAgAZSxEtUddlgZrjVZw+qKJRkM2U00W9EmKPXbZXMUfjWTjIvKT2jq+wkoYsy6cFfVCcaAIQbGnwzHdwAAAAASUVORK5CYII=);
+    background-size: 18px 18px;
+    height: 18px;
+    width: 180px;
+    float: right;
+}
+
+.player-status-health {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAZklEQVQ4y2NgGGyAEV3gv7DwfxQFb98y4hOHASaquwhu49atEAFvb+IMgLqMhi4i1QBqu4gFxtgDpV2I1LgHjc9Es3S0GxpWLgRc4krzdETIZbhcQnUXEQS7hYX/7yYijTExDFsAANOuIZRiiHOgAAAAAElFTkSuQmCC);
+    background-size: 18px 18px;
+    height: 18px;
+}
