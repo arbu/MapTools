@@ -175,7 +175,7 @@ var PlayerMarker = L.Marker.extend({
 
     destroy: function() {
         this._stopAnimateMove();
-        this.marker.remove();
+        this.remove();
     }
 });
 
